@@ -1,0 +1,2 @@
+alert tcp !$HOME_NET any -> 192.168.248.2 80 (msg:"Login attempt on webserver"; content:"Authorization";sid:10000001)
+alert tcp !$HOME_NET any -> 192.168.248.2 any (msg:"Unauthorized inbound connection attempt.";appids:"ssh,telnet"; sid:10000002; )
